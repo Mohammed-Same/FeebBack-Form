@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeback-form</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .container{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+          width: 700px;
+          height: auto;
+          margin: 120px auto;
+          background-color: beige;
+          border-radius: 10px;
+          
+           }
+           p{
+               font-size: 30px;
+           }
+           input{
+               width: 95%;
+               height: 26px;
+               font-size: 22px;
+               border-radius: 10px;
+          border:1px solid;
+          padding: 10px;
+
+               
+           }
+           button{
+               width: 20%;
+               height: 40px;
+               margin: 15px;
+               font-size: 20px;
+               border-radius: 8px;
+               background-color: aquamarine;
+             
+
+           }
+           button:hover{
+               cursor: pointer;
+               background-color: beige;
+              }
+           #alert-msg{
+               border: 2px solid tomato;
+               width: 90%;
+               font-size: 22px;
+               text-align: center;
+               background-color: rgb(250, 76, 45);
+               opacity: 0.8;
+               border-radius: 5px;
+               display: none;
+               color:white;
+           }
+    </style>
+</head>
+<body>
+<div class="container">
+    <p>A Message You Would Like To Pass</p>
+    <input type="text" class="message" value="" id="">
+    <button id="#btn">Submit</button>
+    <p id="alert-msg">Please Enter Your Message</p>
+    <p>Last Message Delivered</p>
+    <h1 class="message-content">Hello World</h1>
+</div>
+<script>
+const message = document.querySelector('.message');
+const button = document.querySelector('button');
+const alert = document.querySelector('#alert-msg');
+const messageContent = document.querySelector('.message-content');
+ button.addEventListener('click',function(e){
+  
+     if(message.value === ''){
+         alert.style.display = 'block';
+     }
+     else{
+         alert.style.display = 'none';
+         messageContent.textContent = message.value
+         message.value=''
+     }
+ })
+ 
+
+    
+</script>
+</body>
+</html>
